@@ -1,3 +1,3 @@
 # MusicPlayer
-A music player
+A music player 创建自vue-cli模版
 接口地址https://bird.ioliu.cn  由@xCss 同学 https://github.com/xCss 提供
