@@ -34,7 +34,7 @@ export default {
   			this.selected = true;
 				const randomnum = Math.floor(Math.random() * 100000);
 				console.log(randomnum);
-  			axios.get('https://bird.ioliu.cn/netease?id='+randomnum )
+  			axios.get('https://bird.ioliu.cn/netease/song?id='+randomnum )
   			.then(function(res){
 				 console.log(res.data.songs[0]);
 				 this.name = res.data.songs[0].name;
