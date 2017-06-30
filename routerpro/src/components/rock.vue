@@ -13,7 +13,9 @@
 </template>
 
 <script>
-import axios from 'axios'
+const NeteaseMusic = require('simple-netease-cloud-music');
+const nm = new NeteaseMusic();
+import axios from 'axios';
 export default {
   name: 'rock',
   data:function(){
@@ -31,15 +33,15 @@ export default {
   		// if(this.selected === null){
   			this.style.color = '#c2b74f';
   			this.style.background = 'rgb(28, 63, 117)';
-  			this.selected = true;
-				const randomnum = Math.floor(Math.random() * 100000);
-				console.log(randomnum);
-  			axios.get('https://bird.ioliu.cn/netease/song?id='+randomnum )
+  			this.selected = true   ;   
+				const randomnum = Math.floor(Math.random() * 1000000);
+			//nm.url(randomnum)
+  			axios.get('https://bird.ioliu.cn/netease/song?id='+randomnum)
   			.then(function(res){
-				 console.log(res.data.songs[0]);
-				 this.name = res.data.songs[0].name;
-				 this.artist = res.data.songs[0].artists[0].name;
-				 this.url = res.data.songs[0].mp3Url;
+				 var Data = res.data.data;
+				 this.name = Data.name;
+				 this.artist = Data.ar[0].name;
+				 this.url = Data.mp3.url;
 				 document.addEventListener('DOMContentLoaded', function () {
 						function audioAutoPlay() {
 						var audio = document.getElementById('music');
@@ -54,7 +56,7 @@ export default {
 			 }.bind(this))
 			.catch(function(err){
 				this.selected = null;
-				alert('oops! Try next')
+				alert("oops,try next!");
 			}.bind(this))
   		}
 			// else{
