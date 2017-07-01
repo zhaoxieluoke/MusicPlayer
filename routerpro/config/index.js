@@ -26,7 +26,7 @@ module.exports = {
     port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',///zhaoxieluoke修改'/' 为'./' 针对当前文件路径 , 20170701 
     proxyTable: {
           '/api': {
             target: 'https://bird.ioliu.cn/netease',

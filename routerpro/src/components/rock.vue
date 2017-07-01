@@ -42,6 +42,7 @@ export default {
 				 this.name = Data.name;
 				 this.artist = Data.ar[0].name;
 				 this.url = Data.mp3.url;
+				 this.play();
 				 document.addEventListener('DOMContentLoaded', function () {
 						function audioAutoPlay() {
 						var audio = document.getElementById('music');
