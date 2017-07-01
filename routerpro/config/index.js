@@ -7,7 +7,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './', //zhaoxieluoke修改'/' 为'./' 针对当前文件路径 , 20170701 
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -26,7 +26,7 @@ module.exports = {
     port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',///zhaoxieluoke修改'/' 为'./' 针对当前文件路径 , 20170701 
+    assetsPublicPath: '/',
     proxyTable: {
           '/api': {
             target: 'https://bird.ioliu.cn/netease',
